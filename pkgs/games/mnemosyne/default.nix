@@ -5,11 +5,11 @@
 
 python.pkgs.buildPythonApplication rec {
   pname = "mnemosyne";
-  version = "2.7.2";
+  version = "2.8";
 
   src = fetchurl {
-    url    = "mirror://sourceforge/project/mnemosyne-proj/mnemosyne/mnemosyne-${version}/Mnemosyne-${version}.tar.gz";
-    sha256 = "09yp9zc00xrc9dmjbsscnkb3hsv3yj46sxikc0r6s9cbghn3nypy";
+    url = "mirror://sourceforge/project/mnemosyne-proj/mnemosyne/mnemosyne-${version}/Mnemosyne-${version}.tar.gz";
+    sha256 = "Y5Sa1LRBiFAZFaBGXzLTygZmmMWPhsRs8xlvnWAfaQA=";
   };
 
   nativeBuildInputs = with python.pkgs; [ pyqtwebengine.wrapQtAppsHook ];
@@ -17,6 +17,7 @@ python.pkgs.buildPythonApplication rec {
   buildInputs = [ anki ];
 
   propagatedBuildInputs = with python.pkgs; [
+    argon2_cffi
     cheroot
     cherrypy
     googletrans
